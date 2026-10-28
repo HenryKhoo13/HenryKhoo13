@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <!-- base dark gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="50%" stop-color="#111d33"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+
+    <!-- name gradient -->
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="35%" stop-color="#a78bfa"/>
+      <stop offset="65%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+
+    <!-- moving shimmer overlay for the name -->
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="48%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="52%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      <animate attributeName="x1" from="-1" to="2" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" from="0" to="3" dur="4.5s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- aurora blobs -->
+    <radialGradient id="aurora1">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aurora2">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aurora3">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- clip the name so the shimmer sweeps across it -->
+    <clipPath id="nameclip"><text x="450" y="155" text-anchor="middle" font-size="76" font-weight="800" letter-spacing="2">Henry Khoo</text></clipPath>
+
+    <!-- per-phrase typewriter reveal clips: width grows (typing) then shrinks (deleting) -->
+    <clipPath id="type0">
+      <rect x="300" y="184" height="34" width="0">
+        <animate attributeName="width" dur="12s" begin="0s" repeatCount="indefinite"
+          keyTimes="0; 0.08333; 0.23333; 0.29167; 1"
+          values="0; 283; 283; 0; 0"/>
+      </rect>
+    </clipPath>
+    <clipPath id="type1">
+      <rect x="195" y="184" height="34" width="0">
+        <animate attributeName="width" dur="12s" begin="0s" repeatCount="indefinite"
+          keyTimes="0; 0.33333; 0.41667; 0.56667; 0.625; 1"
+          values="0; 0; 497; 497; 0; 0"/>
+      </rect>
+    </clipPath>
+    <clipPath id="type2">
+      <rect x="315" y="184" height="34" width="0">
+        <animate attributeName="width" dur="12s" begin="0s" repeatCount="indefinite"
+          keyTimes="0; 0.66667; 0.75; 0.9; 0.95833; 1"
+          values="0; 0; 232; 232; 0; 0"/>
+      </rect>
+    </clipPath>
+
+    <style>
+      .float { animation: floaty 6s ease-in-out infinite; }
+      @keyframes floaty { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+      .blink { animation: blink 0.9s steps(1) infinite; }
+      @keyframes blink { 0%,50%{opacity:1} 50.01%,100%{opacity:0} }
+      @media (prefers-reduced-motion: reduce) {
+        animate, animateTransform { display:none }
+        * { animation: none !important }
+        .phrase1, .phrase2 { opacity: 0 !important }
+        #type0 rect, #type1 rect, #type2 rect { width: 0 !important }
+        .phrase0 text { clip-path: none !important }
+      }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="900" height="300" fill="url(#bg)"/>
+  <!-- faint grid -->
+  <g stroke="#1e3a5f" stroke-width="0.5" opacity="0.25">
+    <path d="M0 50 H900 M0 100 H900 M0 150 H900 M0 200 H900 M0 250 H900"/>
+    <path d="M150 0 V300 M300 0 V300 M450 0 V300 M600 0 V300 M750 0 V300"/>
+  </g>
+
+  <!-- aurora blobs -->
+  <g>
+    <circle cx="180" cy="90" r="160" fill="url(#aurora1)">
+      <animate attributeName="cx" values="180;360;180" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="90;160;90" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="720" cy="210" r="180" fill="url(#aurora2)">
+      <animate attributeName="cx" values="720;540;720" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="210;120;210" dur="17s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="150" r="200" fill="url(#aurora3)">
+      <animate attributeName="r" values="200;260;200" dur="11s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- floating particles -->
+  <g fill="#a5b4fc">
+    <circle cx="120" cy="60" r="2" class="float"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="800" cy="70" r="1.6" class="float"><animate attributeName="opacity" values="1;0.2;1" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="60" cy="240" r="1.8" class="float"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" repeatCount="indefinite"/></circle>
+    <circle cx="850" cy="250" r="2.2" class="float"><animate attributeName="opacity" values="1;0.3;1" dur="2.9s" repeatCount="indefinite"/></circle>
+    <circle cx="300" cy="40" r="1.4" class="float"><animate attributeName="opacity" values="0.4;1;0.4" dur="3.2s" repeatCount="indefinite"/></circle>
+    <circle cx="640" cy="265" r="1.6" class="float"><animate attributeName="opacity" values="1;0.4;1" dur="2.8s" repeatCount="indefinite"/></circle>
+    <circle cx="200" cy="200" r="1.4" class="float"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.6s" repeatCount="indefinite"/></circle>
+    <circle cx="720" cy="120" r="1.8" class="float"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="3.1s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- name with shimmer -->
+  <text x="450" y="155" text-anchor="middle" font-size="76" font-weight="800" letter-spacing="2" fill="url(#name)">Henry Khoo</text>
+  <g clip-path="url(#nameclip)"><rect x="0" y="90" width="900" height="80" fill="url(#shine)"/></g>
+
+  <!-- typewriter subtitle: each phrase types in, holds, then backspaces out, in sequence -->
+  <g font-size="22" font-weight="600" fill="#cbd5e1">
+    <!-- phrase 0: "⚡ Software Engineer" -->
+    <g class="phrase0">
+      <animate attributeName="opacity" dur="12s" begin="0s" repeatCount="indefinite" calcMode="discrete"
+        keyTimes="0; 0.08333; 0.23333; 0.29167; 1" values="1; 1; 1; 0; 0"/>
+      <g clip-path="url(#type0)">
+        <text x="300" y="205">⚡ Software Engineer</text>
+      </g>
+      <rect class="blink" y="188" width="3" height="26" rx="1" fill="#22d3ee">
+        <animate attributeName="x" dur="12s" begin="0s" repeatCount="indefinite"
+          keyTimes="0; 0.08333; 0.23333; 0.29167; 1" values="300; 583; 583; 300; 300"/>
+      </rect>
+    </g>
+
+    <!-- phrase 1: "🚀 Building with JavaScript + React" -->
+    <g class="phrase1">
+      <animate attributeName="opacity" dur="12s" begin="0s" repeatCount="indefinite" calcMode="discrete"
+        keyTimes="0; 0.33333; 0.41667; 0.56667; 0.625; 1" values="0; 1; 1; 1; 0; 0"/>
+      <g clip-path="url(#type1)">
+        <text x="195" y="205">🚀 Building with JavaScript + React</text>
+      </g>
+      <rect class="blink" y="188" width="3" height="26" rx="1" fill="#22d3ee">
+        <animate attributeName="x" dur="12s" begin="0s" repeatCount="indefinite"
+          keyTimes="0; 0.33333; 0.41667; 0.56667; 0.625; 1" values="195; 195; 692; 692; 195; 195"/>
+      </rect>
+    </g>
+
+    <!-- phrase 2: "🌱 Always learning" -->
+    <g class="phrase2">
+      <animate attributeName="opacity" dur="12s" begin="0s" repeatCount="indefinite" calcMode="discrete"
+        keyTimes="0; 0.66667; 0.75; 0.9; 0.95833; 1" values="0; 1; 1; 1; 0; 0"/>
+      <g clip-path="url(#type2)">
+        <text x="315" y="205">🌱 Always learning</text>
+      </g>
+      <rect class="blink" y="188" width="3" height="26" rx="1" fill="#22d3ee">
+        <animate attributeName="x" dur="12s" begin="0s" repeatCount="indefinite"
+          keyTimes="0; 0.66667; 0.75; 0.9; 0.95833; 1" values="315; 315; 547; 547; 315; 315"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- bottom hairline -->
+  <rect x="0" y="296" width="900" height="4" fill="url(#name)"/>
+</svg>
