@@ -49,9 +49,6 @@ Hi, I'm **Henry Khoo** — a software engineer who loves turning ideas into clea
   <img height="170" src="https://github-readme-stats.vercel.app/api?username=HenryKhoo13&show_icons=true&theme=transparent&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=a78bfa&text_color=c9d1d9&include_all_commits=true&count_private=true" alt="Henry's GitHub stats"/>
   <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HenryKhoo13&layout=compact&theme=transparent&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9" alt="Top languages"/>
 </p>
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=HenryKhoo13&bg_color=0d1117&color=58a6ff&line=a78bfa&point=ec4899&area=true&hide_border=true" alt="Activity graph" width="780"/>
-</p>
 
 <!-- wave -->
 <img src="assets/wave.svg" width="900"/>
