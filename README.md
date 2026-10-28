@@ -11,7 +11,7 @@
 
 ## 👋 About Me
 
-Hi, I'm **Henry Khoo** — a software engineer who loves turning ideas into clean, working code. I work across the stack, from frontend interfaces to backend services, data pipelines, and cloud infrastructure, and I enjoy building things that are both useful and a little bit delightful.
+Hi, I'm **Henry Khoo** — a software engineer who loves turning ideas into clean, working code. I work across the stack, from frontend interfaces to backend services, data pipelines, and cloud infrastructure. 
 
 - 🔭 I'm currently working on **web applications and AI-powered tooling**
 - 🧠 Comfortable across the **full stack** — from UI to APIs to the infrastructure underneath
