@@ -46,13 +46,5 @@ Hi, I'm **Henry Khoo** — a software engineer who loves turning ideas into clea
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=HenryKhoo13&show_icons=true&theme=transparent&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=a78bfa&text_color=c9d1d9&include_all_commits=true&count_private=true" alt="Henry's GitHub stats"/>
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HenryKhoo13&layout=compact&theme=transparent&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9" alt="Top languages"/>
-</p>
-
-<!-- wave -->
-<img src="assets/wave.svg" width="900"/>
-
-<p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=HenryKhoo13&theme=transparent&hide_border=true&background=0D1117&ring=58a6ff&fire=a78bfa&currStreakLabel=c9d1d9&sideLabels=c9d1d9&dates=c9d1d9" alt="GitHub streak stats" width="500"/>
 </p>
